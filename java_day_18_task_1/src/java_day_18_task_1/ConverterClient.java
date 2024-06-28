@@ -36,12 +36,12 @@ public class ConverterClient
 			    case "3":
 			        System.out.print("Please enter a value in Fahrenheit (double): ");
 			        double fahrenheit = scanner.nextDouble();
-			        System.out.println(fahrenheit + " Fahrenheit: " + converter.convertFahrenheitToCelcius(fahrenheit));
+			        System.out.println(fahrenheit + " Fahrenheit: " + converter.convertFahrenheitToCelsius(fahrenheit));
 			        break;
 			    case "4":
 			        System.out.print("Please enter a value in Celsius (double): ");
 			        double celsius = scanner.nextDouble();
-			        System.out.println(celsius + " Celsius: " + converter.convertCelciusToFahrenheit(celsius) + " Fahrenheit");
+			        System.out.println(celsius + " Celsius: " + converter.convertCelsiusToFahrenheit(celsius) + " Fahrenheit");
 			        break;
 			    case "5":
 			        System.out.print("Exiting...");
