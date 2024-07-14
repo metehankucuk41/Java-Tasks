@@ -12,8 +12,6 @@ public class java_day_22_task_3
 		String name = "Mike";
 		String pass = "Abc1";
 		
-		String nameLow = name.toLowerCase();
-		
 		int tekrar = 0;
 		while(tekrar<3)
 		{
@@ -33,7 +31,7 @@ public class java_day_22_task_3
 			{
 				System.out.println("Şifre boş bırakılamaz!");
 			}
-			else if(nickname.equals(nameLow) && password.equals(pass))
+			else if(nickname.equalsIgnoreCase(name) && password.equals(pass))
 			{
 				System.out.println("Kullanıcı başarıyla giriş yaptı");
 				break;
