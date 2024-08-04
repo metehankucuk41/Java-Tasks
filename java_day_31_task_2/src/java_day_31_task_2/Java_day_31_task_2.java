@@ -33,7 +33,8 @@ public class Java_day_31_task_2
         
         for (int i = 0; i < array.length; i++) 
         {
-            if (array[i] != 0) {
+            if (array[i] != 0) 
+            {
                 newArray[index++] = array[i];
             }
         }
