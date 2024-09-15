@@ -11,7 +11,7 @@ public class StudentManagement {
      * Constructor to initialize the student management system.
      */
     public StudentManagement() {
-        students = new ArrayList<>();
+        this.students = new ArrayList<>();
     }
 
     /**
@@ -20,16 +20,16 @@ public class StudentManagement {
      * @param student the student to add
      */
     public void addStudent(Student student) {
-        students.add(student);
+        this.students.add(student);
     }
 
     /**
      * Adds multiple students to the list.
      *
-     * @param newStudents the list of students to add
+     * @param students the list of students to add
      */
-    public void addAllStudents(ArrayList<Student> newStudents) {
-        students.addAll(newStudents);
+    public void addAllStudents(ArrayList<Student> students) {
+        this.students.addAll(students);
     }
 
     /**
@@ -38,34 +38,16 @@ public class StudentManagement {
      * @param studentId the ID of the student to be deleted
      */
     public void deleteStudentWithId(int studentId) {
-        int index = findIndexOfStudent(studentId);
-        if (index != -1) {
-            students.remove(index);
-        } else {
-            System.out.println("Student not found");
-        }
+        this.students.removeIf(student -> student.id == studentId);
     }
 
-    /**
-     * Finds the index of a student by their ID.
-     *
-     * @param studentId the ID of the student to find
-     * @return the index of the student in the list, or -1 if not found
-     */
-    public int findIndexOfStudent(int studentId) {
-        for (Student student : students) {
-            if (student.id == studentId) {
-                return students.indexOf(student);
-            }
-        }
-        return -1;
-    }
+
 
     /**
      * Deletes all students from the list.
      */
     public void deleteAllStudents() {
-        students.clear();
+        this.students.clear();
     }
 
     /**
@@ -81,7 +63,7 @@ public class StudentManagement {
             }
         }
 
-        if (searchedStudents.size() > 0) {
+        if (!searchedStudents.isEmpty()) {
             for (Student student : searchedStudents) {
                 System.out.println(student);
             }
@@ -113,9 +95,17 @@ public class StudentManagement {
      * Retrieves and prints all students in the list.
      */
     public void getAllStudents() {
-        for (Student student : students) {
-            System.out.println(student);
-            System.out.println();
+        if (this.students.isEmpty()) {
+            System.out.println("Student not found");
+        } else {
+            System.out.println(students);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "StudentManagement{" +
+                "students=" + students +
+                '}';
     }
 }
